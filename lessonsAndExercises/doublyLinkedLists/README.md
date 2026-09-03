@@ -12,6 +12,8 @@
 
 5. Cite uma situação prática em que ser capaz de percorrer uma lista "de trás para frente" (com imprimirInverso) é útil.
 
+6. Implemente uma função int inserirAntes(ListaDuplaEnc *l, int cod, Produto prod) que insira prod imediatamente antes do nodo cujo código é cod, retornando 1 em caso de sucesso ou 0 caso o código não seja encontrado. Dica: use o ponteiro ant do nodo encontrado para "encaixar" o novo nodo entre os dois.
+
 ## Respostas
 
 1. Como cada nodo, em uma lista duplamente encadeada, contem ponteiros para o próximo nodo e para o nodo anterior, precisamos estabelecer que o anterior do antigo primeiro nodo (caso ele exista) seja o novo nodo. Caso a lista seja vazia (não existe um nodo inicial nem final), devemos definir o nodo criado como o inicio e final da lista.
@@ -25,3 +27,5 @@
 4. l->ini e l->fim serão NULL. A função removerPorCod trata corretamente esse caso, fazendo que o ínicio e o fim da lista sejam NULL e liberando o espaço da memória ocupado pelo nodo excluído.
 
 5. Um exemplo é o histórico de navegação de um navegador: os botões "voltar" e "avançar" precisam se mover pela sequência de páginas visitadas nos dois sentidos — algo natural de implementar com uma lista duplamente encadeada, em que a página atual é um nodo, e "voltar"/"avançar" apenas seguem ant/prox.
+
+6. Função "insertBefore()" implementada no arquivo "doublyLinkedList.c" e testada no arquivo "main.c". 
